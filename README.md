@@ -13,7 +13,7 @@ Uno de los comandos utiliza la API de pago One Call API 3.0 de OpenWeatherMap.or
 
     ![comando_tiempo_resultado](https://i.imgur.com/1G5FttP.png)
 
-  - !pronostico: Este comando, como el anterior, recibe el nombre de una localización y muestra, mediante una consulta a la API de [wttr.in](https://github.com/chubin/wttr.in), el pronóstico de la temperatura para dicha localización a 2 días vista. Como se puede apreciar, este comando está "incompleto" pues únicamente muestra la temperatura, no el pronóstico del tiempo completo, ya que la API de wttr.in tiene sus limitaciones para mostrar esta información de manera sencilla de recuperar y además estamos limitados a comandos de no más de 500 caracteres en Nightbot. Para solventar esto, le indicamos al usuario que si quiere más información utilice el siguiente comando (*!pronostico2*) seguido de las coordenadas de la localización introducida, recuperadas de la información que nos devuelve la API de wttr.in .
+  - !pronostico: Este comando, como el anterior, recibe el nombre de una localización y muestra, mediante una consulta a la API de [wttr.in](https://github.com/chubin/wttr.in), el pronóstico de la temperatura para dicha localización a 2 días vista. Como se puede apreciar, este comando está "incompleto" pues únicamente muestra la temperatura, no el pronóstico del tiempo completo, ya que wttr.in tiene sus limitaciones para mostrar esta información de manera sencilla de recuperar y además estamos limitados a comandos de no más de 500 caracteres en Nightbot. Para solventar esto, le indicamos al usuario que si quiere más información utilice el siguiente comando (*!pronostico2*) seguido de las coordenadas de la localización introducida, recuperadas de la información que nos devuelve la API de wttr.in .
     
     ![comando_pronostico_resultado](https://i.imgur.com/CS7esXR.png)
 
@@ -23,8 +23,8 @@ Uno de los comandos utiliza la API de pago One Call API 3.0 de OpenWeatherMap.or
 
 ## Implementación en Nightbot:
 
-La implementación en Nightbot es sencilla, únicamente tenemos que crear 5 comandos (los 3 expuestos aquí + 2 que realizarán la salida de los comandos *!pronostico* y *!pronostico2* por el chat de Twitch) y copiar&pegar el código en ellos (recuerda introducir tu API key de OpenWeatherMap.org para que el comando *!pronostico2* funcione). Es necesario también que todos los comandos que creemos en Nightbot puedan ser ejecutados por todos los usuarios (seleccionar *Everyone* en el *UserLevel*).
-Se puede consultar la salida de las APIs para modificar la salida de los comandos modificando el código de forma acorde, aunque creo que como están, muestran la información más relevante del tiempo.
+La implementación en Nightbot es sencilla, únicamente tenemos que crear 5 comandos (los 3 mencionados + 2 extra que filtrarán y mostrarán la salida de los comandos *!pronostico* y *!pronostico2* por el chat de Twitch) y copiar&pegar el código en ellos (recuerda introducir tu API key de OpenWeatherMap.org para que el comando *!pronostico2* funcione). Es necesario también que todos los comandos que creemos en Nightbot puedan ser ejecutados por todos los usuarios (seleccionar *Everyone* en el *UserLevel*).
+Se puede consultar la información proporcionada por las APIs para cambiar la salida de los comandos modificando el código de forma acorde, aunque creo que como están, muestran la información más relevante del tiempo.
 
 ![implementacion_comando](https://i.imgur.com/sr8LPeR.png)
 
