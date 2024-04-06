@@ -1,0 +1,1 @@
+$(urlfetch json https://es.wttr.in/$(query)?format=j1)
