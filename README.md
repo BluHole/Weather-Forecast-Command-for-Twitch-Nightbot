@@ -1,7 +1,7 @@
 # Español/English
 
 Este código implementa 3 comandos separados (pero relacionados) en JavaScript para ver el pronóstico del tiempo en una localización dada en Nightbot, un bot popular utilizado en canales de Twitch para automatizar tareas y responder a comandos introducidos por el chat.
-El nombre de los comandos se puede cambiar sin problemas, aunque recomiendo dejarlos como están; ver "Implementación en Nightbot".
+El nombre de los comandos se puede cambiar sin problemas, aunque recomiendo dejarlos como están. Para más información leer *Implementación en Nightbot* más abajo.
 
 ### - IMPORTANTE -
 
