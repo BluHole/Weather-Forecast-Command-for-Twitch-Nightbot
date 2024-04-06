@@ -1,0 +1,1 @@
+$(urlfetch json http://api.openweathermap.org/data/3.0/onecall?lat=$(1)&lon=$(2)&appid=YOUR_API_KEY_GOES_HERE&lang=es&units=metric&exclude=current,minutely,hourly,alerts)
