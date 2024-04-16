@@ -1,5 +1,7 @@
 # Español/English
 
+## Español
+
 Este código implementa 3 comandos separados (pero relacionados) en JavaScript para ver el pronóstico del tiempo en una localización dada en Nightbot, un bot popular utilizado en canales de Twitch para automatizar tareas y responder a comandos introducidos por el chat.
 El nombre de los comandos se puede cambiar sin problemas, aunque recomiendo dejarlos como están. Para más información leer *Implementación en Nightbot* más abajo.
 
@@ -52,6 +54,31 @@ Nos vamos a *Commands --> Custom* en el panel lateral izquierdo de la web de Nig
 
 ----------------
 
-This code implements 3 separate (but related) commands for checking the weather forecast of a given location in Nightbot, a popular bot used in Twitch channels.
+## English
+
+This code implements 3 separate (yet related) JavaScript commands for weather forecasting in a given location in Nightbot, a popular bot in Twitch channels for automation of tasks and responding to commands introduced in the chat.
+The name of the commands can be changed without problems, but I reccomend not to. For more information read *Implementation in Nightbot* below.
+
+They are all in spanish and using international units, so feel free to customize & translate them for your needs.
 
 ### - IMPORTANT -
+
+One of the commands uses the paid API One Call API 3.0 from OpenWeatherMap.org, so you will need a paid account in the platform to be able to use the command (but it is free for less than 1000 API calls per day, so in the majority of cases you will not spend money).
+
+## Commands description:
+
+  - !tiempo: This command receives the name of a given location (for instance, Alicante, in the South-East of Spain) and shows, making a call to the API of [wttr.in](https://github.com/chubin/wttr.in), the **CURRENT** weather for the location.
+
+    ![tiempo_command_result](https://i.imgur.com/1G5FttP.png)
+
+    Translation: *"Current conditions for Alicante are: Partly cloudy, temperature +17ºC, wind chill +17ºC and 88% humidity. Wind <--13km/h, atmospheric pressure 1018hPA and precipitation of 0.0mm/3h."*
+
+  - !pronostico: This command, like the latter, receives the name of a given location and shows, making a call to the API of [wttr.in](https://github.com/chubin/wttr.in), the temperature forecast for the location 2 days ahead. As it can be appreciated, this command is "incomplete" since it only displays the temperature, not the complete weather forecast. This is due to wttr.in's limitations in presenting this information in an easily accessible manner and also we are limited at 500 characters commands in Nightbot. To solve this, we indicate to the user that if it needs more information it can use the next command (*!pronostico2*) followed by the coordinates of the given location, retrieved from the information that the API of wttr.in gives us.
+    
+    ![pronostico_command_result](https://i.imgur.com/CS7esXR.png)
+
+    Translation: *"- Tomorrow: max. temperature of 22ºC and min. temperature of 16ºC.| Past tomorrow: max. temperature of 22ºC, min. temperature of 19ºC./// More information--> !pronostico2 38.35 -0.49".*
+
+  - !pronostico2: This more advanced command makes an API call to the paid API One Call API 3.0 from OpenWeatherMap.org, which requires the precise geographical location (latitude and longitude) of the location we want to retrieve the weather forecast from. To facilitate the use of this command for the users, we retrieve the latitude and longitude information from the query to the wttr.in API in the last command, and because we are limited to a maximum of 1 call to other command in Nighbot, we cannot make a first call to a command that retrieves the latitude and longitud of a given location and then invoques this command with that information.
+
+    ![comando_pronostico2_resultado](https://i.imgur.com/DckxnVE.png) 
